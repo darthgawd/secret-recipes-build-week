@@ -1,0 +1,24 @@
+{
+  "name": "secret-recipes-build-week",
+  "version": "1.0.0",
+  "description": "Secret Recipes Build Week",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ron-hughes/secret-recipes-build-week.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ron-hughes/secret-recipes-build-week/issues"
+  },
+  "homepage": "https://github.com/ron-hughes/secret-recipes-build-week#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "knex": "^0.21.1",
+    "sqlite3": "^4.2.0"
+  }
+}
