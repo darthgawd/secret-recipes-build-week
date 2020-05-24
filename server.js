@@ -1,6 +1,6 @@
 const express = require('express');
 const helmet = require('helmet');
-const cors = require('cors')
+// const cors = require('cors')
 const session = require('express-session')
 const restricted = require("./auth/restricted-middleware.js")
 const knexSessionStore = require("connect-session-knex")(session);
@@ -34,7 +34,7 @@ const sessionConfig = {
 
 // global middleware
 server.use(helmet());
-server.use(cors());
+// server.use(cors());
 server.use(session(sessionConfig));
 server.use(express.json());
 
