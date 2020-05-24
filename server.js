@@ -4,7 +4,6 @@ const cors = require('cors')
 const session = require('express-session')
 const restricted = require("./auth/restricted-middleware.js")
 const knexSessionStore = require("connect-session-knex")(session);
-const SECRET = process.env.SECRET 
 const server = express();
 
 const usersRouter =  require('./router/usersRouter');
@@ -13,7 +12,7 @@ const authRouter = require('./auth/auth-router.js')
 
 const sessionConfig = {
   name: 'cookie',
-  secret: SECRET,
+  secret: starwars,
   cookie: {
     maxAge: 3600 * 1000,
     secure: false, // should be true in production
