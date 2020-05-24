@@ -44,7 +44,7 @@ server.use('/api', restricted, recipesRouter)
 server.use('/auth', authRouter)
 
 server.get('/', (req, res) => {
-    res.send('<h3>Welcome to our Family Secrets Recipes API </h3>');
+    res.send('<h3>Welcome to our Family Secrets Recipes</h3>');
   });
  
  module.exports = server;
