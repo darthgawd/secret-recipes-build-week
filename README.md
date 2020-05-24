@@ -13,3 +13,8 @@
 ## HTTP Method: POST
 
 ### User login method url: /auth/login
+
+## HTTP Method: POST
+
+### Recipe object schema: 
+### Add new recipe method url: /api/recipes

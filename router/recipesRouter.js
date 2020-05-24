@@ -2,6 +2,8 @@ const router = require("express").Router();
 
 const Recipes = require("../models/recipeModel")
 
+
+// GET ALL RECIPES 
 router.get("/recipes", (req, res) => {
     Recipes.getRecipes()
     .then(recipes => {
@@ -15,5 +17,23 @@ router.get("/recipes", (req, res) => {
     });
 })
 });
+
+// ADD NEW RECIPE
+router.post("/recipes", (req, res) => {
+    const recipeData = req.body
+
+    Recipes.addRecipe(recipeData)
+    .then(newRecipe => {
+        res.status(201).json({ message: "New recipe added to the database",
+                                id: newRecipe})
+    })
+    .catch(err => {
+        res.status(500).json({
+            message: "An error occured while trying to add your recipe to the database",
+            err: err
+        })
+    })
+
+})
 
 module.exports = router
