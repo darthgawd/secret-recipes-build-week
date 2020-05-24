@@ -12,7 +12,7 @@ const authRouter = require('./auth/auth-router.js')
 
 const sessionConfig = {
   name: 'cookie',
-  secret: starwars,
+  secret: "starwars",
   cookie: {
     maxAge: 3600 * 1000,
     secure: false, // should be true in production
