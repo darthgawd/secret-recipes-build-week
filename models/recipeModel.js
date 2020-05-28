@@ -2,18 +2,21 @@ const db = require('../data/db-config')
 
 module.exports = {
     getRecipes,
-    getRecipeById,
-    addRecipe
-
+    getRecipe,
+    addRecipe,
+    delRecipe,
 }
 
 function getRecipes  () {
     return db('recipes')
 }
 
-function getRecipeById(id) {
+function getRecipe(id) {
     return db("recipes").where({ id })
  }
  function addRecipe(recipe) {
     return db("recipes").insert(recipe)
  }
+function delRecipe(id) {
+    return db("recipes").where("id", id).del()
+}

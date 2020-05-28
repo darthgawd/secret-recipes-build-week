@@ -13,6 +13,7 @@ router.post('/register', (req, res) => {
     Users.addUser(user)
     .then(saved => {
         res.status(201).json({saved});
+        req.session.id = saved[0].id
 
     })
     .catch(err => {

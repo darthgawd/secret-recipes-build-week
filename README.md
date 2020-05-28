@@ -16,5 +16,8 @@
 
 ## HTTP Method: POST
 
-### Recipe object schema: 
+### Recipe object shape: 
+{
+
+}
 ### Add new recipe method url: /api/recipes

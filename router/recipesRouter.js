@@ -1,5 +1,4 @@
 const router = require("express").Router();
-
 const Recipes = require("../models/recipeModel")
 
 
@@ -8,6 +7,8 @@ router.get("/recipes", (req, res) => {
     Recipes.getRecipes()
     .then(recipes => {
         res.json(recipes)
+        console.log(req.session)
+        console.log(req.params)
     })
     .catch(err => {
         res.status(500).json({
@@ -21,7 +22,6 @@ router.get("/recipes", (req, res) => {
 // ADD NEW RECIPE
 router.post("/recipes", (req, res) => {
     const recipeData = req.body
-
     Recipes.addRecipe(recipeData)
     .then(newRecipe => {
         res.status(201).json({ message: "New recipe added to the database",
@@ -34,6 +34,19 @@ router.post("/recipes", (req, res) => {
         })
     })
 
+})
+
+
+router.delete("/recipes/:id", (req, res) => {
+    const { id } = req.params
+
+    Recipes.delRecipe(id)
+    .then (del => {
+        res.status(204).end()
+    })
+    .catch( err => {
+        console.log("Error", err)
+    })
 })
 
 module.exports = router
