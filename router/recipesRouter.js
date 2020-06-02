@@ -6,9 +6,9 @@ const Recipes = require("../models/recipeModel")
 router.get("/recipes", (req, res) => {
     Recipes.getRecipes()
     .then(recipes => {
-        res.json(recipes)
-        console.log(req.session)
-        console.log(req.params)
+        res.status(200).json(recipes)
+        // console.log(req.session)
+        // console.log(req.params)
     })
     .catch(err => {
         res.status(500).json({
